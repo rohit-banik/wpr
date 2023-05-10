@@ -1,12 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import {home} from './screens';
+import {PersonalDetails, ReportPreview, WeeklyDetails} from './screens';
 
 
 function App() {
   return (
     <Routes>
-      <Route path='/home' Component={home} />
+      <Route path='/' Component={PersonalDetails} />
+      <Route path='/week' Component={WeeklyDetails} />
+      <Route path='/report' Component={ReportPreview} />
     </Routes>
   );
 }
