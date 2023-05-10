@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./formComponent.css";
+import { useNavigate } from "react-router-dom";
 
 const FormComponent = () => {
+  const navigate = useNavigate();
   const getCurrentDate = new Date();
   const [leapYear, setLeapYear] = useState(false);
 
@@ -133,6 +135,7 @@ const FormComponent = () => {
     };
     console.log(data);
     localStorage.setItem("weeklyFormData", JSON.stringify(data));
+    navigate("/report");
     // console.log(JSON.parse(localStorage.getItem("weeklyFormData")));
   };
 
