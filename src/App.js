@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import {PersonalDetails, ReportPreview, WeeklyDetails} from './screens';
+import {MultiplePersonalDetails, PersonalDetails, ReportPreview, WeeklyDetails} from './screens';
 
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
       <Route path='/' Component={PersonalDetails} />
       <Route path='/week' Component={WeeklyDetails} />
       <Route path='/report' Component={ReportPreview} />
+      <Route path='/multipleuser' Component={MultiplePersonalDetails} />
     </Routes>
   );
 }

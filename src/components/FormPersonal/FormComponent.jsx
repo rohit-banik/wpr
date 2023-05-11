@@ -33,6 +33,9 @@ const FormComponent = () => {
   const handleIndustryNameChange = (e) => setIndustryGuideName(e.target.value);
   const handleProjectTitleChange = (e) => setProjectTitle(e.target.value);
 
+  const handleMultiUserRoute = (e) => {
+    navigate("/multipleuser");
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
@@ -62,6 +65,15 @@ const FormComponent = () => {
         onSubmit={handleSubmit}
         className="w-screen max-w-6xl text-left bg-slate-300 p-10 rounded-lg my-5"
       >
+        <div className="text-right">
+          <button
+            onClick={handleMultiUserRoute}
+            className="text-sm cursor-pointer uppercase text-green-700 text-left mb-1 font-semibold"
+          >
+            <div className="flex gap-1">Create group WPR</div>
+          </button>
+        </div>
+
         <p className="text-2xl capitalize text-orange-900 text-center mb-5 italic font-semibold">
           Enter personal details
         </p>
