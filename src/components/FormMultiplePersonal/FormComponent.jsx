@@ -102,11 +102,11 @@ const FormComponent = () => {
       industryGuideName,
       projectTitle,
     };
-    // localStorage.setItem("detailsFormData", JSON.stringify(data));
+    localStorage.setItem("detailsFormData", JSON.stringify(data));
 
-    console.log(data);
-    // navigate("/week");
-    // console.log(JSON.parse(localStorage.getItem("detailsFormData")));
+    // console.log(data);
+    navigate("/week");
+    console.log(JSON.parse(localStorage.getItem("detailsFormData")));
   };
 
   return (
