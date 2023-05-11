@@ -23,22 +23,15 @@ const ReportComponent = () => {
     const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
     pdf.addImage(img, "JPEG", 0, 40, pdfWidth, pdfHeight);
     pdf.save(
-      capitalize(personalData.studentName[index]) +
+      personalData.studentName[index] +
         "_" +
-        personalData.enrolment[index].toUpperCase() +
+        personalData.enrolment[index] +
         "_Week-" +
         weekData.weekNumber +
         ".pdf"
     );
   };
 
-  const capitalize = (str) => {
-    const words = str.split(" ");
-    for (let i = 0; i < words.length; i++) {
-      words[i] = words[i][0].toUpperCase() + words[i].toLowerCase().substr(1);
-    }
-    return words.join(" ");
-  };
   const createNewWPR = async () => {
     await localStorage.removeItem("weeklyFormData");
     navigate("/week");
@@ -113,9 +106,7 @@ const ReportComponent = () => {
                           >
                             Enrollment No.:
                           </th>
-                          <td className="">
-                            {personalData.enrolment[index].toUpperCase()}
-                          </td>
+                          <td className="">{personalData.enrolment[index]}</td>
                         </tr>
 
                         <tr>
@@ -126,7 +117,7 @@ const ReportComponent = () => {
                             Name:
                           </th>
                           <td className="">
-                            {capitalize(personalData.studentName[index])}
+                            {personalData.studentName[index]}
                           </td>
                         </tr>
 
@@ -155,9 +146,7 @@ const ReportComponent = () => {
                           >
                             Company Name:
                           </th>
-                          <td className="">
-                            {capitalize(personalData.companyName)}
-                          </td>
+                          <td className="">{personalData.companyName}</td>
                         </tr>
 
                         <tr>
@@ -168,8 +157,8 @@ const ReportComponent = () => {
                             Faculty Guide Name:
                           </th>
                           <td className="">
-                            {capitalize(personalData.fDesignation)}.{" "}
-                            {capitalize(personalData.facultyName)}
+                            {personalData.fDesignation}.{" "}
+                            {personalData.facultyName}
                           </td>
                         </tr>
 
@@ -181,8 +170,8 @@ const ReportComponent = () => {
                             Industry Guide Name:
                           </th>
                           <td className="">
-                            {capitalize(personalData.iDesignation)}.{" "}
-                            {capitalize(personalData.industryGuideName)}
+                            {personalData.iDesignation}.{" "}
+                            {personalData.industryGuideName}
                           </td>
                         </tr>
 
