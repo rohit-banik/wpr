@@ -260,7 +260,7 @@ const FormComponent = () => {
                     onChange={(event) => handleStreamChange(index, event)}
                   >
                     <option selected value={""}>
-                      Select section
+                      Select Section
                     </option>
                     {streams.map((item) => {
                       return (
@@ -294,7 +294,7 @@ const FormComponent = () => {
                     onChange={(event) => handleSectionChange(index, event)}
                   >
                     <option selected value={""}>
-                      Select Stream
+                      Select Section
                     </option>
                     {sections.map((item) => {
                       return (
