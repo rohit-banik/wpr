@@ -65,7 +65,11 @@ const ReportComponent = () => {
           </button>
         </div>
 
-        <div className="grid grid-rows-2 grid-flow-col gap-4">
+        <div
+          className={`grid grid-rows-${Math.ceil(
+            personalData.enrolment.length / 2
+          )} grid-row grid-flow-col gap-4`}
+        >
           {personalData.enrolment.map((item, index) => (
             <div
               key={index}
