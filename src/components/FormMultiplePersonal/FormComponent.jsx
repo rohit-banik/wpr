@@ -4,40 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { AiOutlineDelete, AiOutlineUserAdd } from "react-icons/ai";
 
 const FormComponent = () => {
-  // const [inputValues, setInputValues] = useState([""]);
-
-  // const handleInputChange = (index, event) => {
-  //   const values = [...inputValues];
-  //   values[index] = event.target.value;
-  //   setInputValues(values);
-  // };
-
-  // const handleAddInput = () => {
-  //   setInputValues([...inputValues, ""]);
-  // };
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   console.log(inputValues);
-  // };
-
-  // return (
-  //   <form onSubmit={handleSubmit}>
-  //     {inputValues.map((value, index) => (
-  //       <input
-  //         key={index}
-  //         type="text"
-  //         value={value}
-  //         onChange={(event) => handleInputChange(index, event)}
-  //       />
-  //     ))}
-  //     <button type="button" onClick={handleAddInput}>
-  //       Add Input
-  //     </button>
-  //     <button type="submit">Submit</button>
-  //   </form>
-  // );
-
   const navigate = useNavigate();
   const programs = ["B. TECH"];
   const streams = ["CSE", "ECE", "EEE", "MAE", "AI", "AIR"];
@@ -117,9 +83,9 @@ const FormComponent = () => {
     sections.splice(index, 1);
     setSection(sections);
   };
-  const handleSingleUserRoute = (e) => {
-    navigate("/");
-  };
+  // const handleSingleUserRoute = (e) => {
+  //   navigate("/");
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -149,14 +115,14 @@ const FormComponent = () => {
         onSubmit={handleSubmit}
         className="w-screen max-w-6xl text-left bg-slate-300 p-10 rounded-lg my-5"
       >
-        <div className="text-right">
+        {/* <div className="text-right">
           <button
             onClick={handleSingleUserRoute}
             className="text-sm cursor-pointer uppercase text-green-700 text-left mb-1 font-semibold"
           >
             <div className="flex gap-1">Create individual WPR</div>
           </button>
-        </div>
+        </div> */}
         <p className="text-2xl capitalize text-orange-900 text-center mb-5 italic font-semibold">
           Enter personal details
         </p>
@@ -186,7 +152,7 @@ const FormComponent = () => {
                   Enrolment Number
                 </label>
                 <input
-                  className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                  className="appearance-none uppercase block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                   required
                   type="text"
                   placeholder="A9100521XXXX"
@@ -201,7 +167,7 @@ const FormComponent = () => {
                   Name
                 </label>
                 <input
-                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  className="appearance-none capitalize block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   required
                   type="text"
                   placeholder="John Doe"
@@ -341,7 +307,7 @@ const FormComponent = () => {
               Company Name
             </label>
             <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              className="appearance-none capitalize block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="grid-company-name"
               type="text"
               placeholder="Google INC."
@@ -364,7 +330,7 @@ const FormComponent = () => {
                 Designation
               </label>
               <select
-                className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                className="block capitalize appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-designation"
                 value={fDesignation}
                 onChange={handleFDesignationChange}
@@ -396,7 +362,7 @@ const FormComponent = () => {
               Faculty Guide's Name
             </label>
             <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              className="appearance-none capitalize block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="grid-guide-name"
               required
               type="text"
@@ -414,7 +380,7 @@ const FormComponent = () => {
                 Designation
               </label>
               <select
-                className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                className="block capitalize appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-designation"
                 value={iDesignation}
                 onChange={handleIDesignationChange}
@@ -446,7 +412,7 @@ const FormComponent = () => {
               Industry Guide's Name
             </label>
             <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              className="appearance-none capitalize block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="grid-in-guide-name"
               type="text"
               placeholder="John Johnson"

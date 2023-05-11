@@ -23,15 +23,22 @@ const ReportComponent = () => {
     const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
     pdf.addImage(img, "JPEG", 0, 40, pdfWidth, pdfHeight);
     pdf.save(
-      personalData.studentName[index] +
+      capitalize(personalData.studentName[index]) +
         "_" +
-        personalData.enrolment[index] +
+        personalData.enrolment[index].toUpperCase() +
         "_Week-" +
         weekData.weekNumber +
         ".pdf"
     );
   };
 
+  const capitalize = (str) => {
+    const words = str.split(" ");
+    for (let i = 0; i < words.length; i++) {
+      words[i] = words[i][0].toUpperCase() + words[i].toLowerCase().substr(1);
+    }
+    return words.join(" ");
+  };
   const createNewWPR = async () => {
     await localStorage.removeItem("weeklyFormData");
     navigate("/week");
@@ -48,9 +55,14 @@ const ReportComponent = () => {
     { value: 3, day: "Thursday" },
     { value: 4, day: "Friday" },
   ];
+
   return (
     <>
-      <div className="report-body w-screen max-w-full text-left rounded-lg mb-5">
+      <div
+        className={`report-body w-screen ${
+          personalData.enrolment.length === 1 ? "max-w-3xl" : "max-w-full"
+        } text-left rounded-lg mb-5`}
+      >
         <div className="flex flex-row gap-2">
           <button onClick={createNewWPR} className="custom-btn btn-16">
             Create new WPR (same user)
@@ -62,7 +74,10 @@ const ReportComponent = () => {
 
         <div className="grid grid-rows-2 grid-flow-col gap-4">
           {personalData.enrolment.map((item, index) => (
-            <div className="mt-10 bg-slate-200 p-6 pt-14 rounded-md">
+            <div
+              key={index}
+              className="mt-10 bg-slate-200 p-6 pt-14 rounded-md"
+            >
               <div id={`pdf-${index}`} className="">
                 <img
                   className="h-auto w-16 absolute ml-10"
@@ -98,7 +113,9 @@ const ReportComponent = () => {
                           >
                             Enrollment No.:
                           </th>
-                          <td className="">{personalData.enrolment[index]}</td>
+                          <td className="">
+                            {personalData.enrolment[index].toUpperCase()}
+                          </td>
                         </tr>
 
                         <tr>
@@ -109,7 +126,7 @@ const ReportComponent = () => {
                             Name:
                           </th>
                           <td className="">
-                            {personalData.studentName[index]}
+                            {capitalize(personalData.studentName[index])}
                           </td>
                         </tr>
 
@@ -138,7 +155,9 @@ const ReportComponent = () => {
                           >
                             Company Name:
                           </th>
-                          <td className="">{personalData.companyName}</td>
+                          <td className="">
+                            {capitalize(personalData.companyName)}
+                          </td>
                         </tr>
 
                         <tr>
@@ -149,10 +168,8 @@ const ReportComponent = () => {
                             Faculty Guide Name:
                           </th>
                           <td className="">
-                            <span className="capitalize">
-                              {personalData.fDesignation}.
-                            </span>{" "}
-                            {personalData.facultyName}
+                            {capitalize(personalData.fDesignation)}.{" "}
+                            {capitalize(personalData.facultyName)}
                           </td>
                         </tr>
 
@@ -164,10 +181,8 @@ const ReportComponent = () => {
                             Industry Guide Name:
                           </th>
                           <td className="">
-                            <span className="capitalize">
-                              {personalData.iDesignation}.
-                            </span>{" "}
-                            {personalData.industryGuideName}
+                            {capitalize(personalData.iDesignation)}.{" "}
+                            {capitalize(personalData.industryGuideName)}
                           </td>
                         </tr>
 
