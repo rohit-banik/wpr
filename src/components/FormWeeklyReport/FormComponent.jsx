@@ -429,7 +429,6 @@ const FormComponent = () => {
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="grid-progress-monday"
-              required
               type="text"
               placeholder="Write your progress for the day"
               onChange={handleProgressChange0}
@@ -454,7 +453,6 @@ const FormComponent = () => {
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="grid-progress-tuesday"
-              required
               type="text"
               placeholder="Write your progress for the day"
               onChange={handleProgressChange1}
@@ -479,7 +477,6 @@ const FormComponent = () => {
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="grid-progress-wednesday"
-              required
               type="text"
               placeholder="Write your progress for the day"
               onChange={handleProgressChange2}
@@ -504,7 +501,6 @@ const FormComponent = () => {
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="grid-progress-thursday"
-              required
               type="text"
               placeholder="Write your progress for the day"
               onChange={handleProgressChange3}
@@ -518,7 +514,6 @@ const FormComponent = () => {
               <input
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 id="grid-progress-friday"
-                required
                 disabled
                 value="Friday"
                 type="text"

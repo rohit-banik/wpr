@@ -23,9 +23,9 @@ const FormComponent = () => {
   const [projectTitle, setProjectTitle] = useState("");
 
   const handleEnrolmentChange = (index, e) => {
-    const enrols = [...enrolment];
-    enrols[index] = e.target.value;
-    setEnrolment(enrols);
+    const enrolmentList = [...enrolment];
+    enrolmentList[index] = e.target.value;
+    setEnrolment(enrolmentList);
   };
   const handleNameChange = (index, e) => {
     const names = [...studentName];
@@ -33,19 +33,19 @@ const FormComponent = () => {
     setStudentName(names);
   };
   const handleProgramChange = (index, e) => {
-    const programs = [...program];
-    programs[index] = e.target.value;
-    setProgram(programs);
+    const programsList = [...program];
+    programsList[index] = e.target.value;
+    setProgram(programsList);
   };
   const handleStreamChange = (index, e) => {
-    const streams = [...stream];
-    streams[index] = e.target.value;
-    setStream(streams);
+    const streamsList = [...stream];
+    streamsList[index] = e.target.value;
+    setStream(streamsList);
   };
   const handleSectionChange = (index, e) => {
-    const sections = [...section];
-    sections[index] = e.target.value;
-    setSection(sections);
+    const streamsList = [...section];
+    streamsList[index] = e.target.value;
+    setSection(streamsList);
   };
   const handleCompanyNameChange = (e) => setCompanyName(e.target.value);
   const handleFDesignationChange = (e) => setFDesignation(e.target.value);
@@ -63,25 +63,25 @@ const FormComponent = () => {
   };
 
   const handleDeleteInput = (index) => {
-    const enrol = [...enrolment];
-    enrol.splice(index, 1);
-    setEnrolment(enrol);
+    const enrolmentList = [...enrolment];
+    enrolmentList.splice(index, 1);
+    setEnrolment(enrolmentList);
 
     const names = [...studentName];
     names.splice(index, 1);
     setStudentName(names);
 
-    const programs = [...program];
-    programs.splice(index, 1);
-    setProgram(programs);
+    const programsList = [...program];
+    programsList.splice(index, 1);
+    setProgram(programsList);
 
-    const streams = [...stream];
-    streams.splice(index, 1);
-    setStream(streams);
+    const streamsList = [...stream];
+    streamsList.splice(index, 1);
+    setStream(streamsList);
 
-    const sections = [...section];
-    sections.splice(index, 1);
-    setSection(sections);
+    const sectionsList = [...section];
+    sectionsList.splice(index, 1);
+    setSection(sectionsList);
   };
   // const handleSingleUserRoute = (e) => {
   //   navigate("/");
@@ -156,6 +156,7 @@ const FormComponent = () => {
                   required
                   type="text"
                   placeholder="A9100521XXXX"
+                  value={enrolment[index]}
                   onChange={(event) => handleEnrolmentChange(index, event)}
                 />
               </div>
@@ -190,8 +191,9 @@ const FormComponent = () => {
                   <select
                     className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     onChange={(event) => handleProgramChange(index, event)}
+                    defaultValue={program[index]}
                   >
-                    <option selected value={""}>
+                    <option selected disabled value={""}>
                       Select Program
                     </option>
                     {programs.map((item) => {
@@ -224,8 +226,9 @@ const FormComponent = () => {
                   <select
                     className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     onChange={(event) => handleStreamChange(index, event)}
+                    defaultValue={stream[index]}
                   >
-                    <option selected value={""}>
+                    <option selected disabled value={""}>
                       Select Stream
                     </option>
                     {streams.map((item) => {
@@ -258,8 +261,9 @@ const FormComponent = () => {
                   <select
                     className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     onChange={(event) => handleSectionChange(index, event)}
+                    defaultValue={section[index]}
                   >
-                    <option selected value={""}>
+                    <option selected disabled value={""}>
                       Select Section
                     </option>
                     {sections.map((item) => {
@@ -296,7 +300,9 @@ const FormComponent = () => {
             </div>
           </button>
         </div>
-
+        <p className="text-md uppercase underline text-blue-900 text-center mb-2 font-semibold">
+          Project Details
+        </p>
         {/* company name */}
         <div className="flex flex-wrap -mx-3 my-6">
           <div className="w-full px-3 mb-6 md:mb-0">
