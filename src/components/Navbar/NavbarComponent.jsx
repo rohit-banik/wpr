@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const NavbarComponent = ({ menu }) => {
   const navigate = useNavigate();
-  const [location, setLocation] = useState("Noida");
+  const location = useState("Noida");
 
   const handleChangeLocation = async () => {
     await localStorage.removeItem("detailsFormData");
