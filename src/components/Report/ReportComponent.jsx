@@ -2,11 +2,11 @@ import React from "react";
 import "./reportComponent.css";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { BsFillPrinterFill } from "react-icons/bs";
 
 const ReportComponent = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const weekData = JSON.parse(localStorage.getItem("weeklyFormData"));
   const personalData = JSON.parse(localStorage.getItem("detailsFormData"));
   const basicDetails = JSON.parse(localStorage.getItem("basicDetailsData"));
@@ -33,15 +33,15 @@ const ReportComponent = () => {
     );
   };
 
-  const createNewWPR = async () => {
-    await localStorage.removeItem("weeklyFormData");
-    navigate("/week");
-  };
-  const createNewUser = async () => {
-    await localStorage.removeItem("weeklyFormData");
-    await localStorage.removeItem("detailsFormData");
-    navigate("/personal");
-  };
+  // const createNewWPR = async () => {
+  //   await localStorage.removeItem("weeklyFormData");
+  //   navigate("/week");
+  // };
+  // const createNewUser = async () => {
+  //   await localStorage.removeItem("weeklyFormData");
+  //   await localStorage.removeItem("detailsFormData");
+  //   navigate("/personal");
+  // };
   const weeks = [
     { value: 0, day: "Monday" },
     { value: 1, day: "Tuesday" },
@@ -55,16 +55,16 @@ const ReportComponent = () => {
       <div
         className={`report-body w-screen ${
           personalData.enrolment.length === 1 ? "max-w-3xl" : "max-w-full"
-        } text-left rounded-lg mb-5`}
+        } text-left rounded-lg mb-5 pt-4`}
       >
-        <div className="flex flex-row gap-2">
+        {/* <div className="flex flex-row gap-2">
           <button onClick={createNewWPR} className="custom-btn btn-16">
             Create new WPR (same user)
           </button>
           <button onClick={createNewUser} className="custom-btn btn-16">
             Create new WPR (new user)
           </button>
-        </div>
+        </div> */}
 
         <div
           className={`grid ${
