@@ -15,9 +15,11 @@ const ReportPreview = () => {
       link: "/week",
     },
   ];
+  const basicDetails = JSON.parse(localStorage.getItem("basicDetailsData"));
+  const uniLocation = basicDetails.location;
   return (
     <>
-      <NavbarComponent menu={menus} />
+      <NavbarComponent menu={(menus, uniLocation)} />
       <div className="background">
         <div className="container mx-auto flex min-h-screen h-auto pt-5 items-center justify-center">
           <ReportComponent />

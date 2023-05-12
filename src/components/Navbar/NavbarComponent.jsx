@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 const NavbarComponent = ({ menu }) => {
   const navigate = useNavigate();
-  const location = useState("Noida");
 
   const handleChangeLocation = async () => {
     await localStorage.removeItem("detailsFormData");
@@ -28,17 +27,17 @@ const NavbarComponent = ({ menu }) => {
             </Link>
             <div className="flex md:order-2">
               <div className="flex flex-col text-right focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 mr-3 md:mr-0 ">
-                <div className="italic">
+                {/* <div className="italic">
                   Current University:{" "}
                   <span className="text-green-800 uppercase font-bold text-lg">
-                    {location}
+                    {menu.location}
                   </span>{" "}
-                </div>
+                </div> */}
                 <div
                   onClick={handleChangeLocation}
                   className="text-yellow-800 cursor-pointer font-bold -mt-1 -mr-11 text-xs"
                 >
-                  Change Location ?
+                  Change Location
                 </div>
               </div>
               <button

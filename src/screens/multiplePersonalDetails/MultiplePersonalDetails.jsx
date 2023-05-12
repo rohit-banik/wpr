@@ -3,7 +3,13 @@ import { FormMultiplePersonal, NavbarComponent } from "../../components";
 import "./multiplePersonalDetails.css";
 
 const PersonalDetails = () => {
-  const menus = [{ id: 1, name: "Create new User", link: "/personal" }];
+  const menus = [
+    {
+      id: 1,
+      name: "Create new User",
+      link: "/personal",
+    },
+  ];
   return (
     <>
       <NavbarComponent menu={menus} />
