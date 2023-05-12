@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const NavbarComponent = ({ menu }) => {
   const navigate = useNavigate();
-  const basicDetails = JSON.parse(localStorage.getItem("basicDetailsData"));
+  const [location, setLocation] = useState("Noida");
 
   const handleChangeLocation = async () => {
     await localStorage.removeItem("detailsFormData");
@@ -31,7 +31,7 @@ const NavbarComponent = ({ menu }) => {
                 <div className="italic">
                   Current University:{" "}
                   <span className="text-green-800 uppercase font-bold text-lg">
-                    {basicDetails.location}
+                    {location}
                   </span>{" "}
                 </div>
                 <div
