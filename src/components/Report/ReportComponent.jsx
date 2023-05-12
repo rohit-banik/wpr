@@ -65,15 +65,11 @@ const ReportComponent = () => {
           </button>
         </div>
 
-        <div
-          className={`grid grid-rows-${Math.ceil(
-            personalData.enrolment.length / 2
-          )} grid-row grid-flow-col gap-4`}
-        >
+        <div className={`grid grid-cols-2 gap-4 justify-between`}>
           {personalData.enrolment.map((item, index) => (
             <div
               key={index}
-              className="mt-10 bg-slate-200 p-6 pt-14 rounded-md"
+              className="mt-10 bg-slate-200 p-6 pt-14 max-w-3xl rounded-md"
             >
               <div id={`pdf-${index}`} className="">
                 <img
