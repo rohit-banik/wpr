@@ -513,6 +513,7 @@ const FormComponent = () => {
               <input
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 id="grid-progress-friday"
+                required
                 disabled
                 value="Friday"
                 type="text"
@@ -523,7 +524,6 @@ const FormComponent = () => {
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="grid-progress-friday"
-              required
               type="text"
               placeholder="Write your progress for the day"
               onChange={handleProgressChange4}
