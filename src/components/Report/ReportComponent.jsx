@@ -66,7 +66,11 @@ const ReportComponent = () => {
           </button>
         </div>
 
-        <div className={`grid grid-cols-2 gap-4 justify-between`}>
+        <div
+          className={`grid ${
+            personalData.enrolment.length === 1 ? "grid-cols-1" : "grid-cols-2"
+          } gap-4 justify-between`}
+        >
           {personalData.enrolment.map((item, index) => (
             <div
               key={index}

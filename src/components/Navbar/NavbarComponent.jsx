@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const NavbarComponent = () => {
+const NavbarComponent = ({ menu }) => {
   const navigate = useNavigate();
   const basicDetails = JSON.parse(localStorage.getItem("basicDetailsData"));
 
@@ -14,7 +14,7 @@ const NavbarComponent = () => {
   return (
     <>
       <div>
-        <nav className="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-400">
+        <nav className="bg-white fixed w-full z-20 top-0 left-0 border-b outline-none border-gray-400">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1">
             <Link to="/" className="flex items-center">
               <img
@@ -68,23 +68,25 @@ const NavbarComponent = () => {
               className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
               id="navbar-sticky"
             >
-              <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
-                <li>
-                  <Link
-                    to="#"
-                    className="block py-2 pl-3 pr-4 rounded hover:font-bold hover:text-blue-800 md:p-0 text-blue-900 uppercase"
-                  >
-                    Create New Users
-                  </Link>
-                </li>
-                <li>
+              <ul className="flex flex-col p-4 md:p-0 mt-4 border-none outline-none font-medium rounded-lg md:flex-row md:space-x-8 md:mt-0">
+                {menu.map((item) => (
+                  <li key={item.id} className="outline-none border-none">
+                    <Link
+                      to={item.link}
+                      className="block py-2 pl-3 pr-4 rounded hover:font-bold hover:text-blue-800 md:p-0 text-blue-900 uppercase"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+                {/* <li>
                   <Link
                     to="#"
                     className="block py-2 pl-3 pr-4 rounded hover:font-bold hover:text-blue-800 md:p-0 text-blue-900 uppercase"
                   >
                     Create New Week
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
