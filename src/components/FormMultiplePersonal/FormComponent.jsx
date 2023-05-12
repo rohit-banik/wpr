@@ -106,7 +106,7 @@ const FormComponent = () => {
 
     // console.log(data);
     navigate("/week");
-    console.log(JSON.parse(localStorage.getItem("detailsFormData")));
+    // console.log(JSON.parse(localStorage.getItem("detailsFormData")));
   };
 
   return (

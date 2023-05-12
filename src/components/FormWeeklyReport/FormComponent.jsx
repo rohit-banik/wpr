@@ -133,7 +133,6 @@ const FormComponent = () => {
       futurePlan: futurePlan,
       progress: [progress0, progress1, progress2, progress3, progress4],
     };
-    console.log(data);
     localStorage.setItem("weeklyFormData", JSON.stringify(data));
     navigate("/report");
     // console.log(JSON.parse(localStorage.getItem("weeklyFormData")));

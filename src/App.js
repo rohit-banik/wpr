@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import {
+  BasicDetails,
   MultiplePersonalDetails,
-  // PersonalDetails,
   ReportPreview,
   WeeklyDetails,
 } from "./screens";
@@ -10,10 +10,10 @@ import {
 function App() {
   return (
     <Routes>
-      {/* <Route path='/' Component={PersonalDetails} /> */}
+      <Route path='/' Component={BasicDetails} />
       <Route path="/week" Component={WeeklyDetails} />
       <Route path="/report" Component={ReportPreview} />
-      <Route path="/" Component={MultiplePersonalDetails} />
+      <Route path="/personal" Component={MultiplePersonalDetails} />
     </Routes>
   );
 }

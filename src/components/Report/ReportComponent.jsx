@@ -9,6 +9,7 @@ const ReportComponent = () => {
   const navigate = useNavigate();
   const weekData = JSON.parse(localStorage.getItem("weeklyFormData"));
   const personalData = JSON.parse(localStorage.getItem("detailsFormData"));
+  const basicDetails = JSON.parse(localStorage.getItem("basicDetailsData"));
 
   const createPDF = async (index) => {
     const pdf = new jsPDF("portrait", "pt", "a4");
@@ -39,7 +40,7 @@ const ReportComponent = () => {
   const createNewUser = async () => {
     await localStorage.removeItem("weeklyFormData");
     await localStorage.removeItem("detailsFormData");
-    navigate("/");
+    navigate("/personal");
   };
   const weeks = [
     { value: 0, day: "Monday" },
@@ -73,15 +74,15 @@ const ReportComponent = () => {
             >
               <div id={`pdf-${index}`} className="">
                 <img
-                  className="h-auto w-16 absolute ml-10"
+                  className="h-auto w-12 opacity-80 absolute ml-10"
                   src={process.env.PUBLIC_URL + "/assets/amity-logo.png"}
                   alt=""
                 />
-                <p className="mt-5 text-4xl text-center uppercase font-bold underline">
-                  Amity University
+                <p className="mt-5 text-3xl text-center uppercase font-bold underline">
+                  Amity University {basicDetails.location}
                 </p>
                 <p className="mt-4 text-base text-center capitalize font-semibold">
-                  major project: weekly progress report
+                  {basicDetails.projectType}: weekly progress report
                 </p>
                 <p className="mt-2 text-lg underline text-center font-semibold">
                   Week: {weekData.weekNumber}{" "}
@@ -199,7 +200,7 @@ const ReportComponent = () => {
                           >
                             Targets for the week:
                           </th>
-                          <td className="">{weekData.target}</td>
+                          <td className="text-justify">{weekData.target}</td>
                         </tr>
 
                         <tr>
@@ -209,7 +210,9 @@ const ReportComponent = () => {
                           >
                             Achievements for the week:
                           </th>
-                          <td className="">{weekData.achievement}</td>
+                          <td className="text-justify">
+                            {weekData.achievement}
+                          </td>
                         </tr>
 
                         <tr>
@@ -223,7 +226,9 @@ const ReportComponent = () => {
                           >
                             Future work plans:
                           </th>
-                          <td className="">{weekData.futurePlan}</td>
+                          <td className="text-justify">
+                            {weekData.futurePlan}
+                          </td>
                         </tr>
                       </tbody>
                     </table>
@@ -260,7 +265,7 @@ const ReportComponent = () => {
                                 >
                                   {item.day}
                                 </th>
-                                <td className="px-6 py-4 border border-gray-900">
+                                <td className="px-6 py-4 border text-justify border-gray-900">
                                   {weekData.progress[item.value]}
                                 </td>
                               </tr>
