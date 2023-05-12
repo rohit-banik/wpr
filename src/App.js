@@ -6,15 +6,19 @@ import {
   ReportPreview,
   WeeklyDetails,
 } from "./screens";
+import { Footer } from "./components";
 
 function App() {
   return (
-    <Routes>
-      <Route path='/' Component={BasicDetails} />
-      <Route path="/week" Component={WeeklyDetails} />
-      <Route path="/report" Component={ReportPreview} />
-      <Route path="/personal" Component={MultiplePersonalDetails} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path='/' Component={BasicDetails} />
+        <Route path="/week" Component={WeeklyDetails} />
+        <Route path="/report" Component={ReportPreview} />
+        <Route path="/personal" Component={MultiplePersonalDetails} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
