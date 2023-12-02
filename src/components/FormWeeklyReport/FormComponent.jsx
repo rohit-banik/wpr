@@ -88,11 +88,9 @@ const FormComponent = () => {
 
   const handleStartMonthChange = (e) => {
     setStartMonth(e.target.value);
-    // console.log(daysInStartMonth);
   };
   const handleEndMonthChange = (e) => {
     setEndMonth(e.target.value);
-    // console.log(daysInEndMonth);
   };
   const handleStartDayChange = (e) => setStartDay(e.target.value);
   const handleEndDayChange = (e) => setEndDay(e.target.value);
@@ -135,7 +133,6 @@ const FormComponent = () => {
     };
     localStorage.setItem("weeklyFormData", JSON.stringify(data));
     navigate("/report");
-    // console.log(JSON.parse(localStorage.getItem("weeklyFormData")));
   };
 
   return (

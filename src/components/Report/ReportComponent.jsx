@@ -74,8 +74,18 @@ const ReportComponent = () => {
           {personalData.enrolment.map((item, index) => (
             <div
               key={index}
-              className="mt-10 bg-slate-200 p-6 pt-14 max-w-3xl rounded-md"
+              className="mt-10 bg-slate-200 p-6 pb-10 max-w-3xl rounded-md"
             >
+              <div className="text-right mr-10">
+                <button
+                  onClick={() => createPDF(index)}
+                  className="custom-btn btn-18 mt-6"
+                >
+                  <div className="flex flex-row gap-2">
+                    <BsFillPrinterFill className="mt-1 ml-2" /> Print
+                  </div>
+                </button>
+              </div>
               <div id={`pdf-${index}`} className="">
                 <img
                   className="h-auto w-12 opacity-80 absolute ml-10"
@@ -280,16 +290,6 @@ const ReportComponent = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="text-right mr-10">
-                <button
-                  onClick={() => createPDF(index)}
-                  className="custom-btn btn-18 mt-6"
-                >
-                  <div className="flex flex-row gap-2">
-                    <BsFillPrinterFill className="mt-1 ml-2" /> Print
-                  </div>
-                </button>
               </div>
             </div>
           ))}

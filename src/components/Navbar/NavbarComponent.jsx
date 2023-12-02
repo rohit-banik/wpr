@@ -16,14 +16,19 @@ const NavbarComponent = ({ menu }) => {
         <nav className="bg-white fixed w-full z-20 top-0 left-0 border-b outline-none border-gray-400">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1">
             <Link to="/" className="flex items-center">
-              <img
-                src={process.env.PUBLIC_URL + "/assets/amity-logo.png"}
-                className="h-12 mr-3"
-                alt=""
-              />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap text-blue-900">
-                Amity University
-              </span>
+              <div className="flex flex-col">
+                <span className="self-center text-2xl font-semibold whitespace-nowrap text-blue-900">
+                  WPR Generator
+                  <div className="text-sm flex flex-row gap-2">
+                    for Amity University
+                    <img
+                      src={process.env.PUBLIC_URL + "/assets/amity-logo.png"}
+                      className="h-5 mr-3"
+                      alt=""
+                    />
+                  </div>
+                </span>
+              </div>
             </Link>
             <div className="flex md:order-2">
               <div className="flex flex-col text-right focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 mr-3 md:mr-0 ">
@@ -56,9 +61,9 @@ const NavbarComponent = ({ menu }) => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               </button>

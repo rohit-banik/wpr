@@ -13,8 +13,8 @@ const PersonalDetails = () => {
   return (
     <>
       <NavbarComponent menu={menus} />
-      <div className="background">
-        <div className="container mx-auto flex flex-col min-h-screen h-auto pt-16 items-center justify-center">
+      <div className="background pb-10">
+        <div className="container mx-auto flex flex-col min-h-screen h-auto pt-10 items-center justify-center">
           <FormMultiplePersonal />
         </div>
       </div>

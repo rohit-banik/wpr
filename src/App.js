@@ -11,7 +11,7 @@ import { Footer } from "./components";
 function App() {
   return (
     <>
-      <div className="sm:visible invisible ">
+      <div className="sm:visible invisible">
         <Routes>
           <Route path="/" Component={BasicDetails} />
           <Route path="/week" Component={WeeklyDetails} />

@@ -18,7 +18,7 @@ const ReportPreview = () => {
   return (
     <>
       <NavbarComponent menu={menus} />
-      <div className="background">
+      <div className="background pb-10">
         <div className="container mx-auto flex min-h-screen h-auto pt-5 items-center justify-center">
           <ReportComponent />
         </div>
